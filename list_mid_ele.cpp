@@ -18,7 +18,7 @@ namespace mid
     void insert()
     {
         struct  node* current = NULL;
-        for (int i = 1; i < 10; ++i)
+        for (int i = 1; i < 9; ++i)
         {
 
             struct node* temp = new node;
