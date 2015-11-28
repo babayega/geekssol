@@ -50,13 +50,11 @@ namespace mid
 
     void middle_ele()
     {
-        int count1 = 0;
         struct node* temp1 = head;
         struct node* temp2 = head;
         while (temp2 != NULL && temp2->next != NULL)
         {
             temp1 = temp1->next;
-            ++count1;
             temp2 = temp2->next->next;
         }
         std::cout<<"The middle element is "<<temp1->data;
