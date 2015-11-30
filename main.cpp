@@ -1,12 +1,12 @@
 //babayega 13/11/15
 
 
-#include "list_mid_ele.h"
+#include "equilibrium_index.h"
 
 
 int main()
 {
-    mid::execute();
+    index::execute();
 
     return 0;
 }
