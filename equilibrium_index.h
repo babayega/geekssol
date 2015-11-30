@@ -5,10 +5,10 @@
 #ifndef GEEKSSOL_EQUILIBRIUM_INDEX_H
 #define GEEKSSOL_EQUILIBRIUM_INDEX_H
 
-
-class equilibrium_index {
-
-};
-
+namespace index
+{
+    void equilibrium_index(int arr[], int n);
+    void execute();
+}
 
 #endif //GEEKSSOL_EQUILIBRIUM_INDEX_H
