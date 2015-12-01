@@ -16,23 +16,24 @@ namespace min
     struct node* head = NULL;
     void construct(int data)
     {
-        struct node* node1;
-        struct node* prev = NULL;
+        struct node* node1 = new node;
+        struct node* prev = new node;
+        struct node* current;
         node1->data = data;
         node1->left = NULL;
         node1->right = NULL;
-        std::cout<<" "<<node1->data;
         if (head == NULL)
             head = node1;
         else
         {
-            while (node1 != NULL)
+            current = head;
+            while (current != NULL)
             {
-                prev = node1;
-                if (node1->data < data)
-                    node1 = node1->right;
+                prev = current;
+                if (current->data < data)
+                    current = current->right;
                 else
-                    node1 = node1->left;
+                    current = current->left;
             }
             if (prev->data > data)
                 prev->left = node1;
@@ -42,10 +43,17 @@ namespace min
         
     }
 
-  /*  void min_val(struct node *head_ref)
+    void min_val(struct node *node1)
     {
+        struct node* prev;
+        while(node1 != NULL)
+        {
+            prev = node1;
+            node1 = node1->left;
+        }
+        std::cout<<"The minimum element in the tree is  "<<prev->data;
 
-    }*/
+    }
 
     void print(struct node* node1)
     {
@@ -62,8 +70,9 @@ namespace min
         construct(5);
         construct(6);
         construct(3);
-        construct(5);
+        construct(4);
         construct(7);
         print(head);
+        min_val(head);
     }
 }
