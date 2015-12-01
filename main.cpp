@@ -1,12 +1,12 @@
 //babayega 13/11/15
 
 
-#include "min_val_bt.h"
+#include "missing_ele.h"
 
 
 int main()
 {
-    min::execute();
+    miss::execute();
 
     return 0;
 }
