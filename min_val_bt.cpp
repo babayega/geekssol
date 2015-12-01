@@ -14,28 +14,30 @@ namespace min
         struct node* right;
     };
     struct node* head = NULL;
-    void construct(struct node* node1, int data)
+    void construct(int data)
     {
-        if(node1 == NULL)
-        {
-            (node1)->data = data;
-            (node1)->left = NULL;
-            (node1)->right = NULL;
-            std::cout<<" "<<node1->data;
-            if (head == NULL)
-                head = node1;
-        }
+        struct node* node1;
+        struct node* prev = NULL;
+        node1->data = data;
+        node1->left = NULL;
+        node1->right = NULL;
+        std::cout<<" "<<node1->data;
+        if (head == NULL)
+            head = node1;
         else
         {
-
-            if(node1->data < data)
+            while (node1 != NULL)
             {
-                construct(node1->right, data);
+                prev = node1;
+                if (node1->data < data)
+                    node1 = node1->right;
+                else
+                    node1 = node1->left;
             }
+            if (prev->data > data)
+                prev->left = node1;
             else
-            {
-                construct(node1->left, data);
-            }
+                prev->right = node1;
         }
         
     }
@@ -57,11 +59,11 @@ namespace min
 
     void execute()
     {
-        construct(head, 5);
-        construct(head, 6);
-        construct(head, 3);
-        construct(head, 5);
-        construct(head, 7);
+        construct(5);
+        construct(6);
+        construct(3);
+        construct(5);
+        construct(7);
         print(head);
     }
 }

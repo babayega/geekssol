@@ -9,7 +9,7 @@
 
 namespace min
 {
-    void construct(struct node* head_ref, int data);
+    void construct(int data);
     void print(struct node* head);
     void execute();
 
