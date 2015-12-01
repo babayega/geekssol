@@ -1,12 +1,12 @@
 //babayega 13/11/15
 
 
-#include "equilibrium_index.h"
+#include "min_val_bt.h"
 
 
 int main()
 {
-    index::execute();
+    min::execute();
 
     return 0;
 }
