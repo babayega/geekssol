@@ -48,13 +48,7 @@ int deque(struct queue *q)
 
 void push(struct node** top_ref, int new_data)
 {
-    struct node *new_node = (struct node*)malloc(sizeof(struct node));  //creating new node
-    if(new_node == NULL)
-    {
-        std::cout<<"stack overflow";
-        exit(0);
-    }
-
+    struct node *new_node = new node;  //creating new node
     new_node->data = new_data;  //adding data to the node
     new_node->next = (*top_ref);   //linking the rest of the stack to the new_node
     (*top_ref) = new_node;  //making new_node as top node
@@ -83,7 +77,7 @@ int pop(struct node** top_ref)
 
 
     void execute() {
-        struct queue *queue1 = (struct queue *) malloc(sizeof(struct queue));
+        struct queue *queue1 = new queue;
         queue1->stack1 = NULL;
         queue1->stack2 = NULL;
         enqueue(queue1, 1);
