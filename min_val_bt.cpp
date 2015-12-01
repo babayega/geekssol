@@ -45,7 +45,7 @@ namespace min
 
     void min_val(struct node *node1)
     {
-        struct node* prev;
+        struct node* prev = new node;
         while(node1 != NULL)
         {
             prev = node1;
