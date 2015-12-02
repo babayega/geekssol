@@ -12,6 +12,7 @@ namespace min
     void construct(int data);
     void print(struct node* head);
     void min_val(struct node* node1);
+    void check_BST();
     void execute();
 
 }

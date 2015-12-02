@@ -3,10 +3,12 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "min_val_bt.h"
 
 namespace min
 {
+    std::vector<int> inorder;
     struct node
     {
         int data;
@@ -51,7 +53,7 @@ namespace min
             prev = node1;
             node1 = node1->left;
         }
-        std::cout<<"The minimum element in the tree is  "<<prev->data;
+        std::cout<<"\nThe minimum element in the tree is  "<<prev->data<<"\n";
 
     }
 
@@ -61,8 +63,24 @@ namespace min
         {
             print(node1->left);
             std::cout << " " << node1->data;
+            inorder.push_back(node1->data);
             print(node1->right);
         }
+    }
+
+    void check_BST()
+    {
+        for (int i = 0; i < inorder.size()-1; ++i)
+        {
+            if (inorder[i] > inorder[i+1])
+            {
+                std::cout<<"\nNot BST";
+                exit(0);
+            }
+
+        }
+        std::cout << "\nValid BST";
+
     }
 
     void execute()
@@ -74,5 +92,6 @@ namespace min
         construct(7);
         print(head);
         min_val(head);
+        check_BST();
     }
 }
