@@ -13,11 +13,10 @@ namespace miss
     void missing(int arr[], int n)
     {
         std::vector<int > arr1(n+1, 0);
-        for (int i = 0; i <= n; ++i)
+        for (int i = 0; i < n; ++i)
             ++arr1[arr[i]];
         for (int j = 1; j <= n; ++j)
         {
-            std::cout<<" "<<arr1[j];
             if (arr1[j] == 0)
                 std::cout<<"The missing element is "<<j<<"\n";
             if (arr1[j] == 2)
@@ -29,7 +28,7 @@ namespace miss
 
     void execute()
     {
-        int arr[] = {1, 2, 4, 5, 7, 6, 2};
+        int arr[] = {7, 3, 4, 5, 5, 6, 2, 1};
         int  n = sizeof(arr)/sizeof(arr[0]);
         missing(arr, n);
     }
